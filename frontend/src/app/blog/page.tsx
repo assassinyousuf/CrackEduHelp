@@ -43,17 +43,17 @@ export default function BlogListingPage() {
   };
 
   return (
-    <div className="bg-slate-50 text-slate-900 min-h-screen py-12">
+    <div className="bg-slate-950 text-slate-100 min-h-screen py-12 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Banner Section */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-teal-50 text-teal-700 text-xs font-semibold rounded-full border border-teal-100">
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-teal-950/80 text-teal-450 text-xs font-semibold rounded-full border border-teal-500/20">
             <Sparkles className="w-3.5 h-3.5" />
             <span>CreackEduHelp Academy Blog</span>
           </div>
-          <h1 className="text-4xl font-black text-gray-900 leading-tight">Academic Resource Center & Study Guides</h1>
-          <p className="text-sm text-slate-500">
+          <h1 className="text-4xl font-black text-white leading-tight">Academic Resource Center & Study Guides</h1>
+          <p className="text-sm text-slate-400">
             Discover referencing templates, slide structure guides, and study time-blocking strategies curated by our university specialists.
           </p>
         </div>
@@ -64,25 +64,25 @@ export default function BlogListingPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <article key={post.id} className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+              <article key={post.id} className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl flex flex-col justify-between hover-tilt text-white">
                 <div className="space-y-4">
-                  <span className="inline-block px-2.5 py-1 bg-teal-50 text-teal-700 font-extrabold text-[10px] uppercase rounded border border-teal-100">
+                  <span className="inline-block px-2.5 py-1 bg-teal-955/50 text-teal-400 font-extrabold text-[10px] uppercase rounded border border-teal-500/25">
                     {post.category}
                   </span>
-                  <h3 className="font-extrabold text-lg text-gray-900 leading-snug">{post.title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed truncate-3-lines">
+                  <h3 className="font-extrabold text-lg text-white leading-snug">{post.title}</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed truncate-3-lines">
                     {post.content.slice(0, 150)}...
                   </p>
                 </div>
                 
-                <div className="flex justify-between items-center pt-6 mt-6 border-t border-gray-50 text-xs text-slate-400">
+                <div className="flex justify-between items-center pt-6 mt-6 border-t border-slate-800/80 text-xs text-slate-450">
                   <span className="flex items-center space-x-1">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>{new Date(post.created_at).toLocaleDateString()}</span>
                   </span>
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="font-bold text-teal-600 hover:text-teal-700 flex items-center space-x-1"
+                    className="font-bold text-teal-400 hover:text-teal-350 flex items-center space-x-1"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -94,9 +94,9 @@ export default function BlogListingPage() {
         )}
 
         {/* Newsletter widget */}
-        <div className="bg-slate-900 text-white rounded-2xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between border border-slate-800 gap-6 mt-12">
+        <div className="bg-slate-900/60 backdrop-blur-md rounded-2xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between border border-slate-800/80 gap-6 mt-12 hover-tilt">
           <div className="space-y-2">
-            <h3 className="font-extrabold text-xl">Get Study Guides in Your Inbox</h3>
+            <h3 className="font-extrabold text-xl text-white">Get Study Guides in Your Inbox</h3>
             <p className="text-xs text-slate-400">We send referencing checklists and citation templates once a month. No spam.</p>
           </div>
 
@@ -107,12 +107,12 @@ export default function BlogListingPage() {
               <>
                 <input 
                   type="email" required value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500 w-full sm:w-64"
+                  className="bg-slate-950/60 border border-slate-800 rounded-lg px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500 w-full sm:w-64"
                   placeholder="enter your email address"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold text-xs rounded-lg transition flex items-center space-x-1"
+                  className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold text-xs rounded-lg transition flex items-center space-x-1 cursor-pointer"
                 >
                   <Mail className="w-3.5 h-3.5" />
                   <span>Subscribe</span>

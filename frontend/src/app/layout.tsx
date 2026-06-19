@@ -20,14 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans bg-gray-50 text-gray-900 min-h-screen flex flex-col transition-colors duration-200`}>
+      <body className={`${inter.variable} font-sans bg-slate-950 text-slate-100 min-h-screen flex flex-col transition-colors duration-200`}>
         <Navbar />
         <main className="flex-grow">
           {children}
         </main>
         
         {/* Footer */}
-        <footer className="bg-gray-950 text-gray-400 py-12 border-t border-gray-900">
+        <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <span className="font-extrabold text-xl tracking-tight text-white">
@@ -62,7 +62,7 @@ export default function RootLayout({
               </p>
             </div>
           </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-gray-900 text-center text-xs text-gray-600">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-slate-900 text-center text-xs text-slate-500">
             &copy; {new Date().getFullYear()} CreackEduHelp. All rights reserved. Registered Academic Support Provider.
           </div>
         </footer>

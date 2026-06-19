@@ -104,31 +104,31 @@ function RegisterForm() {
   };
 
   return (
-    <div className="max-w-md w-full bg-white p-8 rounded-2xl border border-slate-100 shadow-xl space-y-6">
+    <div className="max-w-md w-full bg-slate-900/60 backdrop-blur-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl space-y-6 hover-tilt text-white">
       
       <div className="text-center space-y-2">
-        <h2 className="text-3xl font-black text-slate-900">Create Account</h2>
-        <p className="text-sm text-slate-500">Join CreackEduHelp today for academic productivity.</p>
+        <h2 className="text-3xl font-black text-white">Create Account</h2>
+        <p className="text-sm text-slate-400">Join CreackEduHelp today for academic productivity.</p>
       </div>
 
       {error && (
-        <div className="p-4 bg-rose-50 text-rose-800 rounded-lg text-sm flex items-center space-x-2 border border-rose-100">
-          <AlertCircle className="w-4 h-4 shrink-0" />
+        <div className="p-4 bg-rose-950/50 text-rose-200 rounded-lg text-sm flex items-center space-x-2 border border-rose-900/50">
+          <AlertCircle className="w-4 h-4 shrink-0 text-rose-450" />
           <span>{error}</span>
         </div>
       )}
 
       {success && (
-        <div className="p-4 bg-emerald-50 text-emerald-800 rounded-lg text-sm font-semibold border border-emerald-100">
+        <div className="p-4 bg-emerald-950/50 text-emerald-200 rounded-lg text-sm font-semibold border border-emerald-900/50">
           {success}
         </div>
       )}
 
       <form onSubmit={handleRegister} className="space-y-4">
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Full Name</label>
+          <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Full Name</label>
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
               <User className="w-4 h-4" />
             </span>
             <input
@@ -136,16 +136,16 @@ function RegisterForm() {
               required
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+              className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
               placeholder="e.g. John Doe"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Email Address</label>
+          <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Email Address</label>
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
               <Mail className="w-4 h-4" />
             </span>
             <input
@@ -153,7 +153,7 @@ function RegisterForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+              className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
               placeholder="you@example.com"
             />
           </div>
@@ -161,9 +161,9 @@ function RegisterForm() {
 
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Phone Number</label>
+            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Phone Number</label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
                 <Phone className="w-4 h-4" />
               </span>
               <input
@@ -171,16 +171,16 @@ function RegisterForm() {
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="+44 7946 0958"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">WhatsApp</label>
+            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">WhatsApp</label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
                 <MessageSquare className="w-4 h-4" />
               </span>
               <input
@@ -188,7 +188,7 @@ function RegisterForm() {
                 required
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="WhatsApp Number"
               />
             </div>
@@ -197,32 +197,32 @@ function RegisterForm() {
 
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Facebook Profile Link</label>
+            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Facebook Profile Link</label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
                 <Facebook className="w-4 h-4" />
               </span>
               <input
                 type="url"
                 value={facebookLink}
                 onChange={(e) => setFacebookLink(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="facebook.com/..."
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">LinkedIn Profile Link</label>
+            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">LinkedIn Profile Link</label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
                 <Linkedin className="w-4 h-4" />
               </span>
               <input
                 type="url"
                 value={linkedinLink}
                 onChange={(e) => setLinkedinLink(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="linkedin.com/in/..."
               />
             </div>
@@ -230,9 +230,9 @@ function RegisterForm() {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Password</label>
+          <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Password</label>
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
               <Lock className="w-4 h-4" />
             </span>
             <input
@@ -240,14 +240,14 @@ function RegisterForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+              className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
               placeholder="Min. 6 characters"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">I want to register as a:</label>
+          <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">I want to register as a:</label>
           <div className="grid grid-cols-2 gap-2 mt-1">
             <button
               type="button"
@@ -255,7 +255,7 @@ function RegisterForm() {
               className={`py-2 text-xs font-bold rounded-lg border transition ${
                 role === "student"
                   ? "bg-teal-600 border-teal-500 text-white"
-                  : "bg-white border-gray-200 text-gray-500 hover:bg-gray-50"
+                  : "bg-slate-950/60 border-slate-800 text-slate-400 hover:bg-slate-900 cursor-pointer"
               }`}
             >
               STUDENT
@@ -266,7 +266,7 @@ function RegisterForm() {
               className={`py-2 text-xs font-bold rounded-lg border transition ${
                 role === "ambassador"
                   ? "bg-teal-600 border-teal-500 text-white"
-                  : "bg-white border-gray-200 text-gray-500 hover:bg-gray-50"
+                  : "bg-slate-950/60 border-slate-800 text-slate-400 hover:bg-slate-900 cursor-pointer"
               }`}
             >
               AMBASSADOR
@@ -276,9 +276,9 @@ function RegisterForm() {
 
         {role === "student" && (
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">University / Institute</label>
+            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">University / Institute</label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
                 <GraduationCap className="w-4 h-4" />
               </span>
               <input
@@ -286,7 +286,7 @@ function RegisterForm() {
                 required={role === "student"}
                 value={university}
                 onChange={(e) => setUniversity(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="e.g. Oxford University"
               />
             </div>
@@ -295,16 +295,16 @@ function RegisterForm() {
 
         {role === "student" && (
           <div>
-            <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Referral Code (Optional)</label>
+            <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Referral Code (Optional)</label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
                 <Gift className="w-4 h-4" />
               </span>
               <input
                 type="text"
                 value={refCode}
                 onChange={(e) => setRefCode(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="e.g. REF-XXXXXXXX"
               />
             </div>
@@ -312,16 +312,16 @@ function RegisterForm() {
         )}
 
         <div>
-          <label className="block text-xs font-semibold uppercase text-slate-500 mb-1">Profile Picture (Optional)</label>
+          <label className="block text-xs font-semibold uppercase text-slate-400 mb-1">Profile Picture (Optional)</label>
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
               <Camera className="w-4 h-4" />
             </span>
             <input
               type="file"
               accept="image/*"
               onChange={(e) => setProfilePicture(e.target.files?.[0] || null)}
-              className="w-full border border-gray-200 rounded-lg pl-10 pr-3 py-3 text-xs focus:outline-none focus:border-teal-500"
+              className="w-full bg-slate-950/60 border border-slate-800 rounded-lg pl-10 pr-3 py-3 text-xs text-white focus:outline-none focus:border-teal-500"
             />
           </div>
         </div>
@@ -329,16 +329,16 @@ function RegisterForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 disabled:opacity-50"
+          className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 disabled:opacity-50 shadow-lg shadow-teal-600/10 cursor-pointer"
         >
           <span>{loading ? "Registering..." : "Create Account"}</span>
           <UserPlus className="w-4 h-4" />
         </button>
       </form>
 
-      <div className="text-center pt-4 border-t border-gray-150 text-sm text-slate-500">
+      <div className="text-center pt-4 border-t border-slate-800/80 text-sm text-slate-450">
         Already have an account?{" "}
-        <Link href="/login" className="font-bold text-teal-600 hover:underline">
+        <Link href="/login" className="font-bold text-teal-400 hover:underline">
           Sign In
         </Link>
       </div>
@@ -349,7 +349,7 @@ function RegisterForm() {
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-[80vh] flex items-center justify-center bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
       <Suspense fallback={<div className="text-slate-500">Loading signup parameters...</div>}>
         <RegisterForm />
       </Suspense>

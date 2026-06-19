@@ -187,32 +187,32 @@ export default function StudentDashboard() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "submitted": return "bg-gray-100 text-gray-700 border-gray-200";
-      case "under_review": return "bg-amber-50 text-amber-700 border-amber-200";
-      case "quoted": return "bg-blue-50 text-blue-700 border-blue-200";
-      case "deposit_paid": return "bg-teal-50 text-teal-700 border-teal-200";
-      case "assigned": return "bg-cyan-50 text-cyan-700 border-cyan-200";
-      case "in_progress": return "bg-indigo-50 text-indigo-700 border-indigo-200";
-      case "completed": return "bg-emerald-50 text-emerald-700 border-emerald-200";
-      case "cancelled": return "bg-rose-50 text-rose-700 border-rose-200";
-      default: return "bg-slate-100 text-slate-700";
+      case "submitted": return "bg-slate-900/40 text-slate-400 border-slate-800";
+      case "under_review": return "bg-amber-955/40 text-amber-400 border-amber-900/60";
+      case "quoted": return "bg-blue-950/40 text-blue-400 border-blue-900/60";
+      case "deposit_paid": return "bg-teal-955/40 text-teal-400 border-teal-900/60";
+      case "assigned": return "bg-cyan-950/40 text-cyan-400 border-cyan-900/60";
+      case "in_progress": return "bg-indigo-950/40 text-indigo-400 border-indigo-900/60";
+      case "completed": return "bg-emerald-950/40 text-emerald-400 border-emerald-900/60";
+      case "cancelled": return "bg-rose-955/40 text-rose-450 border-rose-900/60";
+      default: return "bg-slate-900/40 text-slate-400 border-slate-800";
     }
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-slate-100">
       
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-gray-200 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-slate-800 gap-4">
         <div>
-          <h1 className="text-2xl font-black text-slate-900">Student Portal</h1>
-          <p className="text-sm text-slate-500">Welcome, {currentUser?.full_name}. Submit formatting or slide design tasks below.</p>
+          <h1 className="text-2xl font-black text-white">Student Portal</h1>
+          <p className="text-sm text-slate-400">Welcome, {currentUser?.full_name}. Submit formatting or slide design tasks below.</p>
         </div>
 
-        <div className="flex bg-white rounded-lg border border-gray-200 p-1">
+        <div className="flex bg-slate-900/60 rounded-lg border border-slate-800 p-1">
           <button
             onClick={() => setActiveTab("list")}
             className={`px-4 py-2 text-sm font-semibold rounded-md transition ${
-              activeTab === "list" ? "bg-teal-600 text-white" : "text-gray-500 hover:text-teal-600"
+              activeTab === "list" ? "bg-teal-600 text-white" : "text-slate-400 hover:text-teal-400"
             }`}
           >
             My Orders
@@ -220,7 +220,7 @@ export default function StudentDashboard() {
           <button
             onClick={() => setActiveTab("create")}
             className={`px-4 py-2 text-sm font-semibold rounded-md transition flex items-center space-x-1 ${
-              activeTab === "create" ? "bg-teal-600 text-white" : "text-gray-500 hover:text-teal-600"
+              activeTab === "create" ? "bg-teal-600 text-white" : "text-slate-400 hover:text-teal-400"
             }`}
           >
             <PlusCircle className="w-4 h-4" />
@@ -234,21 +234,21 @@ export default function StudentDashboard() {
         // ==========================================
         // SUBMIT ORDER SCREEN
         // ==========================================
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl border border-slate-100 shadow-sm mt-8 space-y-6">
-          <div className="pb-4 border-b border-gray-100">
-            <h2 className="text-xl font-bold">New Project Assistance Request</h2>
-            <p className="text-xs text-slate-400">Provide guideline rules. Prices are computed instantly but admins can override based on details.</p>
+        <div className="max-w-3xl mx-auto bg-slate-900/60 p-8 rounded-2xl border border-slate-800/80 shadow-2xl mt-8 space-y-6 backdrop-blur-md hover-tilt">
+          <div className="pb-4 border-b border-slate-800">
+            <h2 className="text-xl font-bold text-white">New Project Assistance Request</h2>
+            <p className="text-xs text-slate-500">Provide guideline rules. Prices are computed instantly but admins can override based on details.</p>
           </div>
 
           {formErr && (
-            <div className="p-4 bg-rose-50 text-rose-800 rounded-lg text-sm flex items-start space-x-2 border border-rose-100 leading-relaxed">
+            <div className="p-4 bg-rose-955/40 text-rose-400 rounded-lg text-sm flex items-start space-x-2 border border-rose-900/60 leading-relaxed">
               <ShieldAlert className="w-5 h-5 shrink-0 mt-0.5" />
               <span>{formErr}</span>
             </div>
           )}
 
           {formSuccess && (
-            <div className="p-4 bg-emerald-50 text-emerald-800 rounded-lg text-sm font-semibold border border-emerald-100">
+            <div className="p-4 bg-emerald-950/40 text-emerald-400 rounded-lg text-sm font-semibold border border-emerald-900/60">
               {formSuccess}
             </div>
           )}
@@ -256,18 +256,18 @@ export default function StudentDashboard() {
           <form onSubmit={handleCreateOrder} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Task Title</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Task Title</label>
                 <input 
                   type="text" required value={title} onChange={(e) => setTitle(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500 placeholder-slate-600"
                   placeholder="e.g. Dissertation Formatting"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">University / Institute</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">University / Institute</label>
                 <input 
                   type="text" required value={university} onChange={(e) => setUniversity(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500 placeholder-slate-600"
                   placeholder="e.g. Oxford University"
                 />
               </div>
@@ -275,38 +275,38 @@ export default function StudentDashboard() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Course Name</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Course Name</label>
                 <input 
                   type="text" required value={courseName} onChange={(e) => setCourseName(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500 placeholder-slate-600"
                   placeholder="e.g. Econometrics II"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Service Type</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Service Type</label>
                 <select 
                   value={serviceType} onChange={(e) => setServiceType(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500"
                 >
-                  <option value="PPT Presentation">PPT Presentation Design</option>
-                  <option value="Report Formatting">Report Formatting & Layout</option>
-                  <option value="Research Assistance">Research Assistance</option>
-                  <option value="Proofreading & Editing">Proofreading & Editing</option>
-                  <option value="Referencing & Citation">Referencing Audit</option>
-                  <option value="Data Analysis">Data Analysis Support</option>
-                  <option value="Programming Support">Programming Support</option>
-                  <option value="Document Design">Academic Document Design</option>
+                  <option className="bg-slate-850 text-white" value="PPT Presentation">PPT Presentation Design</option>
+                  <option className="bg-slate-850 text-white" value="Report Formatting">Report Formatting & Layout</option>
+                  <option className="bg-slate-850 text-white" value="Research Assistance">Research Assistance</option>
+                  <option className="bg-slate-850 text-white" value="Proofreading & Editing">Proofreading & Editing</option>
+                  <option className="bg-slate-850 text-white" value="Referencing & Citation">Referencing Audit</option>
+                  <option className="bg-slate-850 text-white" value="Data Analysis">Data Analysis Support</option>
+                  <option className="bg-slate-850 text-white" value="Programming Support">Programming Support</option>
+                  <option className="bg-slate-850 text-white" value="Document Design">Academic Document Design</option>
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Priority</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Priority</label>
                 <select 
                   value={priorityLevel} onChange={(e) => setPriorityLevel(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500"
                 >
-                  <option value="standard">Standard</option>
-                  <option value="urgent">Urgent (+50%)</option>
-                  <option value="express">Express (+100%)</option>
+                  <option className="bg-slate-850 text-white" value="standard">Standard</option>
+                  <option className="bg-slate-850 text-white" value="urgent">Urgent (+50%)</option>
+                  <option className="bg-slate-850 text-white" value="express">Express (+100%)</option>
                 </select>
               </div>
             </div>
@@ -314,50 +314,50 @@ export default function StudentDashboard() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {serviceType !== "PPT Presentation" ? (
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">Word Count</label>
+                  <label className="block text-xs font-semibold text-slate-400 mb-1">Word Count</label>
                   <input 
                     type="number" min="100" value={wordCount} onChange={(e) => setWordCount(Number(e.target.value))}
-                    className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                    className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500"
                   />
                 </div>
               ) : (
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">Slide Count</label>
+                  <label className="block text-xs font-semibold text-slate-400 mb-1">Slide Count</label>
                   <input 
                     type="number" min="5" value={slideCount} onChange={(e) => setSlideCount(Number(e.target.value))}
-                    className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                    className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500"
                   />
                 </div>
               )}
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Deadline Date</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Deadline Date</label>
                 <input 
                   type="datetime-local" required value={deadline} onChange={(e) => setDeadline(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-slate-300 focus:outline-none focus:border-teal-500"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-500 mb-1">Project Outline & Instructions</label>
+              <label className="block text-xs font-semibold text-slate-400 mb-1">Project Outline & Instructions</label>
               <textarea 
                 rows={5} required value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-white focus:outline-none focus:border-teal-500 placeholder-slate-600"
                 placeholder="List clear reference rules, typography margins, slide topics or draft layouts. DO NOT ask for exam assistance."
               ></textarea>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-500 mb-1">Attach Guideline File / Draft Outline (.docx, .pdf, .pptx, .zip)</label>
+              <label className="block text-xs font-semibold text-slate-400 mb-1">Attach Guideline File / Draft Outline (.docx, .pdf, .pptx, .zip)</label>
               <input 
                 type="file" onChange={(e) => setOrderFiles(e.target.files?.[0] || null)}
-                className="w-full border border-gray-200 rounded-lg p-3 text-sm"
+                className="w-full border border-slate-800 rounded-lg p-3 text-sm bg-slate-950/60 text-slate-350"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition"
+              className="w-full py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl transition shadow-lg shadow-teal-500/20"
             >
               Submit Order Request
             </button>
@@ -371,11 +371,11 @@ export default function StudentDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
           
           {/* List panel */}
-          <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm h-fit space-y-4">
-            <h3 className="font-extrabold text-sm text-slate-400 uppercase tracking-wider px-2">Project Listings</h3>
+          <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 shadow-2xl h-fit space-y-4 backdrop-blur-md">
+            <h3 className="font-extrabold text-sm text-slate-500 uppercase tracking-wider px-2">Project Listings</h3>
             
             {(!orders || orders.length === 0) ? (
-              <div className="text-center py-12 text-slate-400 text-sm">
+              <div className="text-center py-12 text-slate-500 text-sm">
                 No orders submitted yet. Click &quot;Submit Task&quot; above to get started.
               </div>
             ) : (
@@ -386,17 +386,17 @@ export default function StudentDashboard() {
                     onClick={() => setSelectedOrder(o)}
                     className={`w-full text-left p-4 rounded-xl border transition flex flex-col space-y-2 ${
                       selectedOrder?.id === o.id 
-                        ? "bg-teal-50/50 border-teal-200" 
-                        : "bg-slate-50 hover:bg-white border-transparent"
+                        ? "bg-teal-955/40 border-teal-850" 
+                        : "bg-slate-955/60 border-transparent hover:bg-slate-900/60"
                     }`}
                   >
                     <div className="flex justify-between items-start">
-                      <span className="font-bold text-sm text-gray-900 truncate max-w-[150px]">{o.title}</span>
+                      <span className="font-bold text-sm text-white truncate max-w-[150px]">{o.title}</span>
                       <span className={`text-[10px] px-2 py-0.5 font-bold uppercase rounded-full border ${getStatusColor(o.status)}`}>
                         {o.status.replace("_", " ")}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center text-xs text-slate-500">
+                    <div className="flex justify-between items-center text-xs text-slate-400">
                       <span>{o.service_type}</span>
                       <span>£{o.quote_amount}</span>
                     </div>
@@ -411,11 +411,11 @@ export default function StudentDashboard() {
             <div className="lg:col-span-2 space-y-6">
               
               {/* Core detail card */}
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-6">
-                <div className="flex justify-between items-start pb-4 border-b border-gray-100">
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl space-y-6 backdrop-blur-md">
+                <div className="flex justify-between items-start pb-4 border-b border-slate-800">
                   <div>
-                    <span className="text-xs font-semibold text-slate-400">Order ID: #{selectedOrder.id.slice(-8).toUpperCase()}</span>
-                    <h2 className="text-xl font-bold text-gray-900">{selectedOrder.title}</h2>
+                    <span className="text-xs font-semibold text-slate-500">Order ID: #{selectedOrder.id.slice(-8).toUpperCase()}</span>
+                    <h2 className="text-xl font-bold text-white">{selectedOrder.title}</h2>
                   </div>
                   <span className={`px-3 py-1 font-bold text-xs uppercase rounded-full border ${getStatusColor(selectedOrder.status)}`}>
                     {selectedOrder.status.replace("_", " ")}
@@ -424,9 +424,9 @@ export default function StudentDashboard() {
 
                 {/* Timeline status bar */}
                 <div className="py-2">
-                  <span className="block text-xs font-semibold uppercase text-slate-400 mb-4">Milestone Tracker</span>
+                  <span className="block text-xs font-semibold uppercase text-slate-500 mb-4">Milestone Tracker</span>
                   <div className="flex items-center justify-between relative">
-                    <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-150 -translate-y-1/2 z-0"></div>
+                    <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-slate-850 -translate-y-1/2 z-0"></div>
                     {["submitted", "deposit_paid", "in_progress", "final_review", "completed"].map((st, idx) => {
                       const stages = ["submitted", "under_review", "quoted", "deposit_paid", "assigned", "in_progress", "draft_submitted", "revision_requested", "final_review", "completed"];
                       const currentIdx = stages.indexOf(selectedOrder.status);
@@ -435,11 +435,11 @@ export default function StudentDashboard() {
                       return (
                         <div key={st} className="flex flex-col items-center z-10">
                           <span className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border transition ${
-                            isActive ? "bg-teal-600 border-teal-500 text-white shadow-md shadow-teal-500/10" : "bg-white border-gray-200 text-slate-400"
+                            isActive ? "bg-teal-600 border-teal-500 text-white shadow-md shadow-teal-500/10" : "bg-slate-950 border-slate-850 text-slate-500"
                           }`}>
                             {isActive ? "✓" : idx + 1}
                           </span>
-                          <span className="text-[10px] font-semibold uppercase mt-2 text-slate-500 bg-white px-1">
+                          <span className="text-[10px] font-semibold uppercase mt-2 text-slate-500 bg-[#0d1527] px-1">
                             {st.replace("_", " ")}
                           </span>
                         </div>
@@ -448,53 +448,53 @@ export default function StudentDashboard() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-gray-100">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
                   <div className="flex items-center space-x-2">
-                    <Calendar className="w-5 h-5 text-teal-600" />
+                    <Calendar className="w-5 h-5 text-teal-400" />
                     <div>
-                      <span className="block text-xs text-slate-400 uppercase">Deadline Date</span>
-                      <span className="text-xs font-bold">{new Date(selectedOrder.deadline).toLocaleDateString()}</span>
+                      <span className="block text-xs text-slate-500 uppercase">Deadline Date</span>
+                      <span className="text-xs font-bold text-slate-200">{new Date(selectedOrder.deadline).toLocaleDateString()}</span>
                     </div>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Clock className="w-5 h-5 text-teal-600" />
+                    <Clock className="w-5 h-5 text-teal-400" />
                     <div>
-                      <span className="block text-xs text-slate-400 uppercase">Priority</span>
-                      <span className="text-xs font-bold uppercase">{selectedOrder.priority_level}</span>
+                      <span className="block text-xs text-slate-500 uppercase">Priority</span>
+                      <span className="text-xs font-bold uppercase text-slate-200">{selectedOrder.priority_level}</span>
                     </div>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <DollarSign className="w-5 h-5 text-teal-600" />
+                    <DollarSign className="w-5 h-5 text-teal-400" />
                     <div>
-                      <span className="block text-xs text-slate-400 uppercase">Total Estimate</span>
-                      <span className="text-xs font-bold text-teal-600">£{selectedOrder.quote_amount || "Calculating..."}</span>
+                      <span className="block text-xs text-slate-500 uppercase">Total Estimate</span>
+                      <span className="text-xs font-bold text-teal-400">£{selectedOrder.quote_amount || "Calculating..."}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-slate-50 p-4 rounded-xl text-xs space-y-2">
-                  <span className="font-bold text-slate-600">Outline guidelines:</span>
-                  <p className="text-slate-500 leading-relaxed whitespace-pre-wrap">{selectedOrder.task_description}</p>
+                <div className="bg-slate-950/60 border border-slate-850 p-4 rounded-xl text-xs space-y-2">
+                  <span className="font-bold text-slate-400">Outline guidelines:</span>
+                  <p className="text-slate-300 leading-relaxed whitespace-pre-wrap">{selectedOrder.task_description}</p>
                 </div>
 
                 {/* Uploaded guidelines file */}
                 {selectedOrder.files.length > 0 && (
                   <div className="space-y-2">
-                    <span className="block text-xs font-semibold uppercase text-slate-400">Guidelines / Deliverable Assets</span>
+                    <span className="block text-xs font-semibold uppercase text-slate-500">Guidelines / Deliverable Assets</span>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {selectedOrder.files.map((file) => (
-                        <div key={file.id} className="p-3 border border-slate-100 rounded-lg flex items-center justify-between text-xs bg-white shadow-sm">
+                        <div key={file.id} className="p-3 border border-slate-800 rounded-lg flex items-center justify-between text-xs bg-slate-955/40 shadow-sm">
                           <div className="flex items-center space-x-2 truncate">
-                            <FileText className="w-4 h-4 text-teal-600" />
+                            <FileText className="w-4 h-4 text-teal-400" />
                             <div className="truncate">
-                              <span className="block font-bold text-slate-700 truncate">{file.file_name}</span>
-                              <span className="text-[10px] text-slate-400 uppercase">{file.file_category}</span>
+                              <span className="block font-bold text-slate-300 truncate">{file.file_name}</span>
+                              <span className="text-[10px] text-slate-500 uppercase">{file.file_category}</span>
                             </div>
                           </div>
                           
                           {/* Deliverable logic check: lock final if balance is unpaid */}
                           {file.file_category === "final" && selectedOrder.status !== "completed" ? (
-                            <div className="flex items-center text-rose-500 space-x-1">
+                            <div className="flex items-center text-rose-455 space-x-1">
                               <ShieldAlert className="w-3.5 h-3.5" />
                               <span className="text-[10px] font-bold">LOCKED</span>
                             </div>
@@ -503,7 +503,7 @@ export default function StudentDashboard() {
                               href={api.getDownloadUrl(file.id)}
                               target="_blank"
                               rel="noreferrer"
-                              className="p-1 text-teal-600 hover:bg-teal-50 rounded"
+                              className="p-1 text-teal-450 hover:bg-teal-950/40 rounded"
                             >
                               <Download className="w-4 h-4" />
                             </a>
@@ -517,20 +517,20 @@ export default function StudentDashboard() {
 
               {/* Payments panel */}
               {selectedOrder.quote_amount && (
-                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-4">
-                  <h3 className="font-bold text-gray-900 flex items-center space-x-2">
-                    <DollarSign className="w-5 h-5 text-teal-600" />
+                <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl space-y-4 backdrop-blur-md">
+                  <h3 className="font-bold text-white flex items-center space-x-2">
+                    <DollarSign className="w-5 h-5 text-teal-400" />
                     <span>Payment Processing (30/70 Escrow)</span>
                   </h3>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-4 rounded-xl text-xs leading-relaxed">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-950/60 border border-slate-800 p-4 rounded-xl text-xs leading-relaxed text-slate-300">
                     <div className="space-y-1">
-                      <span className="block font-bold text-slate-700 uppercase">Payment Schedule:</span>
+                      <span className="block font-bold text-slate-400 uppercase">Payment Schedule:</span>
                       <p>1. 30% Deposit: <strong>£{selectedOrder.deposit_amount}</strong> (Required to start work)</p>
                       <p>2. 70% Balance: <strong>£{selectedOrder.final_amount}</strong> (Payable before final delivery)</p>
                     </div>
                     <div className="space-y-1">
-                      <span className="block font-bold text-slate-700 uppercase">UK Manual Bank Details:</span>
+                      <span className="block font-bold text-slate-400 uppercase">UK Manual Bank Details:</span>
                       <p>Bank: CreackEduHelp UK Ltd</p>
                       <p>Sort Code: 20-46-95 | Account: 82956105</p>
                       <p>Wise Email: wise@creackeduhelp.com</p>
@@ -539,22 +539,22 @@ export default function StudentDashboard() {
 
                   {/* Payment proofs logs */}
                   <div className="space-y-2">
-                    <span className="block text-xs font-semibold text-slate-400">Payment Auditing Logs</span>
+                    <span className="block text-xs font-semibold text-slate-500">Payment Auditing Logs</span>
                     {selectedOrder.payments.length === 0 ? (
-                      <p className="text-xs text-slate-400">No payment proofs uploaded yet.</p>
+                      <p className="text-xs text-slate-500">No payment proofs uploaded yet.</p>
                     ) : (
                       <div className="space-y-1.5">
                         {selectedOrder.payments.map((p) => (
-                          <div key={p.id} className="p-3 border border-slate-150 bg-white rounded-lg flex justify-between items-center text-xs">
+                          <div key={p.id} className="p-3 border border-slate-800 bg-slate-955/40 rounded-lg flex justify-between items-center text-xs">
                             <div>
                               <span className="font-bold capitalize">{p.payment_type} Payment</span>
-                              <span className="text-[10px] text-slate-400 block">Method: {p.payment_method.replace("_", " ")}</span>
+                              <span className="text-[10px] text-slate-500 block">Method: {p.payment_method.replace("_", " ")}</span>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <span className="font-semibold text-slate-700">£{p.amount}</span>
-                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
-                                p.status === "approved" ? "bg-emerald-50 text-emerald-800" :
-                                p.status === "rejected" ? "bg-rose-50 text-rose-800" : "bg-amber-50 text-amber-800"
+                              <span className="font-semibold text-slate-300">£{p.amount}</span>
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase border ${
+                                p.status === "approved" ? "bg-emerald-950/40 text-emerald-400 border-emerald-900/60" :
+                                p.status === "rejected" ? "bg-rose-955/40 text-rose-455 border-rose-900/60" : "bg-amber-955/40 text-amber-450 border-amber-900/60"
                               }`}>
                                 {p.status}
                               </span>
@@ -567,18 +567,18 @@ export default function StudentDashboard() {
 
                   {/* Upload payment form */}
                   {selectedOrder.status !== "completed" && (
-                    <form onSubmit={handlePaymentSubmit} className="pt-4 border-t border-gray-100 space-y-4">
-                      <span className="block text-xs font-semibold text-slate-400">Upload Transfer Proof Receipt</span>
+                    <form onSubmit={handlePaymentSubmit} className="pt-4 border-t border-slate-800 space-y-4">
+                      <span className="block text-xs font-semibold text-slate-500">Upload Transfer Proof Receipt</span>
                       
                       {payErr && (
-                        <div className="p-3 bg-rose-50 text-rose-800 rounded-lg text-xs flex items-center space-x-1 border border-rose-100">
+                        <div className="p-3 bg-rose-955/40 text-rose-400 rounded-lg text-xs flex items-center space-x-1 border border-rose-900/60">
                           <AlertCircle className="w-4 h-4" />
                           <span>{payErr}</span>
                         </div>
                       )}
 
                       {paySuccess && (
-                        <div className="p-3 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100">
+                        <div className="p-3 bg-emerald-950/40 text-emerald-400 rounded-lg text-xs font-semibold border border-emerald-900/60">
                           {paySuccess}
                         </div>
                       )}
@@ -588,28 +588,28 @@ export default function StudentDashboard() {
                           <label className="block text-[10px] font-bold text-slate-500 mb-1">PAYMENT TYPE</label>
                           <select 
                             value={payType} onChange={(e) => setPayType(e.target.value)}
-                            className="w-full border border-gray-200 rounded p-2 text-xs"
+                            className="w-full border border-slate-800 rounded p-2 text-xs bg-slate-950/60 text-white"
                           >
-                            <option value="deposit">30% Deposit</option>
-                            <option value="final">70% Final Balance</option>
+                            <option className="bg-slate-850 text-white" value="deposit">30% Deposit</option>
+                            <option className="bg-slate-850 text-white" value="final">70% Final Balance</option>
                           </select>
                         </div>
                         <div>
                           <label className="block text-[10px] font-bold text-slate-500 mb-1">PAYMENT METHOD</label>
                           <select 
                             value={payMethod} onChange={(e) => setPayMethod(e.target.value)}
-                            className="w-full border border-gray-200 rounded p-2 text-xs"
+                            className="w-full border border-slate-800 rounded p-2 text-xs bg-slate-950/60 text-white"
                           >
-                            <option value="bank_transfer">UK Bank Transfer</option>
-                            <option value="wise">Wise Transfer</option>
-                            <option value="paypal">PayPal</option>
+                            <option className="bg-slate-850 text-white" value="bank_transfer">UK Bank Transfer</option>
+                            <option className="bg-slate-850 text-white" value="wise">Wise Transfer</option>
+                            <option className="bg-slate-850 text-white" value="paypal">PayPal</option>
                           </select>
                         </div>
                         <div>
                           <label className="block text-[10px] font-bold text-slate-500 mb-1">AMOUNT (£)</label>
                           <input 
                             type="number" step="0.01" required value={payAmount} onChange={(e) => setPayAmount(Number(e.target.value))}
-                            className="w-full border border-gray-200 rounded p-2 text-xs"
+                            className="w-full border border-slate-800 rounded p-2 text-xs bg-slate-950/60 text-white placeholder-slate-600"
                             placeholder="0.00"
                           />
                         </div>
@@ -620,12 +620,12 @@ export default function StudentDashboard() {
                           <label className="block text-[10px] font-bold text-slate-500 mb-1">RECEIPT FILE SCREENSHOT (.png, .jpg, .pdf)</label>
                           <input 
                             type="file" required onChange={(e) => setPayProof(e.target.files?.[0] || null)}
-                            className="w-full border border-gray-200 rounded p-2 text-xs"
+                            className="w-full border border-slate-800 rounded p-2 text-xs bg-slate-950/60 text-slate-300"
                           />
                         </div>
                         <button
                           type="submit"
-                          className="w-full md:w-fit px-6 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-lg transition mt-5 shrink-0"
+                          className="w-full md:w-fit px-6 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs rounded-xl shadow-lg transition mt-5 shrink-0 shadow-lg shadow-teal-500/20"
                         >
                           Upload Proof
                         </button>
@@ -636,15 +636,15 @@ export default function StudentDashboard() {
               )}
 
               {/* Chat thread console */}
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-4">
-                <h3 className="font-bold text-gray-900 flex items-center space-x-2">
-                  <MessageSquare className="w-5 h-5 text-teal-600" />
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl space-y-4 backdrop-blur-md">
+                <h3 className="font-bold text-white flex items-center space-x-2">
+                  <MessageSquare className="w-5 h-5 text-teal-400" />
                   <span>Support Discussion Console</span>
                 </h3>
 
-                <div className="h-64 overflow-y-auto border border-gray-100 rounded-xl p-4 bg-slate-50 space-y-3 flex flex-col">
+                <div className="h-64 overflow-y-auto border border-slate-800 rounded-xl p-4 bg-slate-955/60 space-y-3 flex flex-col">
                   {chatMessages.length === 0 ? (
-                    <div className="text-center my-auto text-slate-400 text-xs">
+                    <div className="text-center my-auto text-slate-500 text-xs">
                       No messages yet. Send a note to start discussing formatting guidelines.
                     </div>
                   ) : (
@@ -656,7 +656,7 @@ export default function StudentDashboard() {
                           className={`max-w-[70%] p-3 rounded-xl text-xs space-y-1 ${
                             isMe 
                               ? "bg-teal-600 text-white self-end rounded-tr-none" 
-                              : "bg-white text-gray-800 border border-slate-100 self-start rounded-tl-none shadow-sm"
+                              : "bg-slate-900 text-slate-200 border border-slate-800 self-start rounded-tl-none shadow-sm"
                           }`}
                         >
                           <span className="block font-bold text-[10px] opacity-75">
@@ -678,12 +678,12 @@ export default function StudentDashboard() {
                     required
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
-                    className="flex-grow border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                    className="flex-grow border border-slate-800 bg-slate-950/60 text-white rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500 placeholder-slate-500"
                     placeholder="Ask about revision updates or task parameters..."
                   />
                   <button
                     type="submit"
-                    className="p-3 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition"
+                    className="p-3 bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition shadow-lg shadow-teal-500/20"
                   >
                     <Send className="w-5 h-5" />
                   </button>

@@ -75,7 +75,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="bg-slate-50 text-slate-900 min-h-screen">
+    <div className="bg-slate-950 text-slate-100 min-h-screen">
       
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-24 pb-28 bg-slate-950 text-white">
@@ -216,62 +216,62 @@ export default function LandingPage() {
       </section>
 
       {/* 2. SERVICES SECTION */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-slate-950 text-white border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           <div className="space-y-4">
-            <h2 className="text-3xl font-extrabold text-gray-900">Permitted Support Services</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-extrabold text-white">Permitted Support Services</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
               We connect students with specialists to optimize layout appearance, structure presentation files, and check coding syntax.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <Layers className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">PPT Presentation Design</h3>
-              <p className="text-sm text-slate-500">Design high-impact slide layouts, data structures, and animations for your defense or seminars.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <Layers className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">PPT Presentation Design</h3>
+              <p className="text-sm text-slate-400">Design high-impact slide layouts, data structures, and animations for your defense or seminars.</p>
             </div>
             
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <FileText className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Report Formatting</h3>
-              <p className="text-sm text-slate-500">Align margins, tables of contents, page numbers, and custom templates according to style guides.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <FileText className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Report Formatting</h3>
+              <p className="text-sm text-slate-400">Align margins, tables of contents, page numbers, and custom templates according to style guides.</p>
             </div>
             
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <PenTool className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Proofreading & Editing</h3>
-              <p className="text-sm text-slate-500">Review grammar, flow, passive sentence structure, and terminology definitions.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <PenTool className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Proofreading & Editing</h3>
+              <p className="text-sm text-slate-400">Review grammar, flow, passive sentence structure, and terminology definitions.</p>
             </div>
 
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <Bookmark className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Referencing & Citations</h3>
-              <p className="text-sm text-slate-500">Ensure absolute accuracy for Harvard, APA, IEEE, or Oxford style catalogs.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <Bookmark className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Referencing & Citations</h3>
+              <p className="text-sm text-slate-400">Ensure absolute accuracy for Harvard, APA, IEEE, or Oxford style catalogs.</p>
             </div>
 
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <BarChart2 className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Data Analysis Support</h3>
-              <p className="text-sm text-slate-500">Guidance on formatting charts, SPSS output structures, and Excel graphs.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <BarChart2 className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Data Analysis Support</h3>
+              <p className="text-sm text-slate-400">Guidance on formatting charts, SPSS output structures, and Excel graphs.</p>
             </div>
 
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <Laptop className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Programming Support</h3>
-              <p className="text-sm text-slate-500">Syntax auditing, code refactoring guidance, and documentation generation.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <Laptop className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Programming Support</h3>
+              <p className="text-sm text-slate-400">Syntax auditing, code refactoring guidance, and documentation generation.</p>
             </div>
 
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <CheckSquare className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Research Assistance</h3>
-              <p className="text-sm text-slate-500">Assist in searching catalogs, outlining literature, and summary compiling.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <CheckSquare className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Research Assistance</h3>
+              <p className="text-sm text-slate-400">Assist in searching catalogs, outlining literature, and summary compiling.</p>
             </div>
 
-            <div className="p-6 bg-slate-50 hover:bg-teal-50/40 rounded-xl transition border border-slate-100">
-              <Sparkles className="text-teal-600 w-8 h-8 mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Document Design</h3>
-              <p className="text-sm text-slate-500">LaTeX layout adjustments, typography, and graphic illustrations.</p>
+            <div className="p-6 bg-slate-900/60 hover:bg-slate-900 rounded-xl transition border border-slate-800/80 hover-tilt">
+              <Sparkles className="text-teal-400 w-8 h-8 mb-4" />
+              <h3 className="font-bold text-white mb-2">Document Design</h3>
+              <p className="text-sm text-slate-400">LaTeX layout adjustments, typography, and graphic illustrations.</p>
             </div>
           </div>
         </div>
@@ -406,12 +406,12 @@ export default function LandingPage() {
       </section>
 
       {/* 4. HOW IT WORKS */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-950 text-white border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           <div className="space-y-4">
-            <h2 className="text-3xl font-extrabold text-gray-900">How It Works</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
-              Our structural escrow-based progression guarantees premium outcomes.
+            <h2 className="text-3xl font-extrabold text-white">How It Works</h2>
+            <p className="text-slate-400 max-w-xl mx-auto">
+              Our escrow-based milestone process ensures premium outcomes.
             </p>
           </div>
 
@@ -424,12 +424,12 @@ export default function LandingPage() {
               { step: "5", title: "Review Delivery", desc: "Evaluate draft quality, submit feedback, download files." },
               { step: "6", title: "Final Deliverable", desc: "Complete 70% escrow and unlock the clean final work." }
             ].map((s, idx) => (
-              <div key={idx} className="bg-slate-50 p-6 rounded-xl border border-slate-100 text-left space-y-2 relative">
-                <span className="absolute -top-3 left-6 w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm shadow-md">
+              <div key={idx} className="bg-slate-900/60 p-6 rounded-xl border border-slate-800/80 text-left space-y-2 relative hover-tilt text-white">
+                <span className="absolute -top-3 left-6 w-8 h-8 rounded-full bg-teal-600 text-slate-950 font-black flex items-center justify-center text-sm shadow-md">
                   {s.step}
                 </span>
-                <h3 className="font-extrabold text-base text-gray-900 pt-2">{s.title}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">{s.desc}</p>
+                <h3 className="font-extrabold text-base text-white pt-2">{s.title}</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -437,38 +437,38 @@ export default function LandingPage() {
       </section>
 
       {/* 5. TESTIMONIALS */}
-      <section className="py-20 bg-teal-50/40 border-y border-teal-100">
+      <section className="py-20 bg-slate-900/30 border-y border-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
-          <h2 className="text-3xl font-extrabold text-gray-900">Loved by Students Worldwide</h2>
+          <h2 className="text-3xl font-extrabold text-white">Loved by Students Worldwide</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4">
-              <p className="text-sm italic text-gray-600">
+            <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800/80 space-y-4 hover-tilt">
+              <p className="text-sm italic text-slate-350">
                 &quot;The referencing support saved my dissertation. I had 60+ citations in a mess. The specialist formatted everything in perfect Harvard style in under 24 hours!&quot;
               </p>
               <div>
-                <span className="block font-bold text-gray-900">Emily R.</span>
-                <span className="text-xs text-slate-500">MSc Finance Student</span>
+                <span className="block font-bold text-white">Emily R.</span>
+                <span className="text-xs text-slate-400">MSc Finance Student</span>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4">
-              <p className="text-sm italic text-gray-600">
+            <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800/80 space-y-4 hover-tilt">
+              <p className="text-sm italic text-slate-350">
                 &quot;Amazing slides! I gave them a rough word outline and they converted it into an outstanding PowerPoint presentation that looked incredibly clean and professional.&quot;
               </p>
               <div>
-                <span className="block font-bold text-gray-900">Marcus T.</span>
-                <span className="text-xs text-slate-500">Engineering Undergraduate</span>
+                <span className="block font-bold text-white">Marcus T.</span>
+                <span className="text-xs text-slate-400">Engineering Undergraduate</span>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4">
-              <p className="text-sm italic text-gray-600">
+            <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800/80 space-y-4 hover-tilt">
+              <p className="text-sm italic text-slate-350">
                 &quot;Super quick response on programming assistance. The specialist showed me exactly where my syntax compilation errors were and helped me document the code cleanly.&quot;
               </p>
               <div>
-                <span className="block font-bold text-gray-900">Aisha K.</span>
-                <span className="text-xs text-slate-500">Computer Science Student</span>
+                <span className="block font-bold text-white">Aisha K.</span>
+                <span className="text-xs text-slate-400">Computer Science Student</span>
               </div>
             </div>
 
@@ -477,11 +477,11 @@ export default function LandingPage() {
       </section>
 
       {/* 6. FAQ SECTION */}
-      <section id="faq" className="py-20 bg-white">
+      <section id="faq" className="py-20 bg-slate-950 text-white border-b border-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl font-extrabold text-gray-900">Frequently Asked Questions</h2>
-            <p className="text-slate-500">Got questions? We have answers.</p>
+            <h2 className="text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+            <p className="text-slate-400">Got questions? We have answers.</p>
           </div>
 
           <div className="space-y-6">
@@ -491,12 +491,12 @@ export default function LandingPage() {
               { q: "What is your revision policy?", a: "If the formatted draft does not align with your initial guidelines, you can request unlimited revisions within 14 days of delivery. Our specialists will adjust formatting, slides, or citation errors quickly." },
               { q: "Can I cancel my order?", a: "You can request cancellation at any point before a specialist is assigned. Once a specialist begins working on your formatting or slide design, the 30% deposit becomes non-refundable to compensate their labor." }
             ].map((f, idx) => (
-              <div key={idx} className="p-6 bg-slate-50 rounded-xl border border-slate-100 space-y-2">
-                <h3 className="font-extrabold text-gray-900 flex items-center space-x-2">
-                  <HelpCircle className="w-5 h-5 text-teal-600 shrink-0" />
+              <div key={idx} className="p-6 bg-slate-900/60 rounded-xl border border-slate-800/80 space-y-2 hover-tilt">
+                <h3 className="font-extrabold text-white flex items-center space-x-2">
+                  <HelpCircle className="w-5 h-5 text-teal-400 shrink-0" />
                   <span>{f.q}</span>
                 </h3>
-                <p className="text-sm text-slate-600 pl-7 leading-relaxed">{f.a}</p>
+                <p className="text-sm text-slate-350 pl-7 leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
@@ -504,60 +504,60 @@ export default function LandingPage() {
       </section>
 
       {/* 7. CONTACT / LEAD CAPTURE */}
-      <section id="contact" className="py-20 bg-slate-50">
+      <section id="contact" className="py-20 bg-slate-900/40 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="text-3xl font-extrabold text-gray-900">Free Consultation & Advisory</h2>
-            <p className="text-slate-500">
+            <h2 className="text-3xl font-extrabold text-white">Free Consultation & Advisory</h2>
+            <p className="text-slate-450">
               Submit your project layout questions or general questions below and our operations desk will review and advise.
             </p>
           </div>
 
-          <form onSubmit={handleConsultation} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-left space-y-4">
+          <form onSubmit={handleConsultation} className="bg-slate-900/60 p-8 rounded-2xl shadow-2xl border border-slate-800/80 text-left space-y-4 hover-tilt">
             {contactSuccess && (
-              <div className="p-4 bg-emerald-50 text-emerald-800 rounded-lg text-sm font-semibold border border-emerald-100">
+              <div className="p-4 bg-emerald-950/50 text-emerald-200 rounded-lg text-sm font-semibold border border-emerald-900/50">
                 Inquiry received successfully! Our operations desk will get back to you shortly.
               </div>
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Your Name</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Your Name</label>
                 <input 
                   type="text" 
                   required
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full bg-slate-955/60 border border-slate-800 rounded-lg p-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                   placeholder="e.g. John Doe"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-500 mb-1">Email Address</label>
+                <label className="block text-xs font-semibold text-slate-400 mb-1">Email Address</label>
                 <input 
                   type="email" 
                   required
                   value={contactEmail}
                   onChange={(e) => setContactEmail(e.target.value)}
-                  className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="w-full bg-slate-955/60 border border-slate-800 rounded-lg p-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                   placeholder="john@example.com"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-slate-500 mb-1">How can we assist you?</label>
+              <label className="block text-xs font-semibold text-slate-400 mb-1">How can we assist you?</label>
               <textarea 
                 rows={4}
                 required
                 value={contactMsg}
                 onChange={(e) => setContactMsg(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-955/60 border border-slate-800 rounded-lg p-3 text-sm text-white placeholder-slate-650 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                 placeholder="e.g. I need formatting help on my 5000 word dissertation template."
               ></textarea>
             </div>
             
             <button
               type="submit"
-              className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2"
+              className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 cursor-pointer shadow-lg shadow-teal-600/10"
             >
               <Send className="w-4 h-4" />
               <span>Submit Request</span>
@@ -570,7 +570,7 @@ export default function LandingPage() {
               href="https://wa.me/442079460958"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full shadow-lg shadow-emerald-600/10 transition"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full shadow-lg shadow-emerald-600/10 transition cursor-pointer"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Chat on WhatsApp</span>

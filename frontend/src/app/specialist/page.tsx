@@ -124,33 +124,33 @@ export default function SpecialistDashboard() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "submitted": return "bg-gray-100 text-gray-700 border-gray-200";
-      case "deposit_paid": return "bg-teal-50 text-teal-700 border-teal-200";
-      case "assigned": return "bg-cyan-50 text-cyan-700 border-cyan-200";
-      case "in_progress": return "bg-indigo-50 text-indigo-700 border-indigo-200";
-      case "draft_submitted": return "bg-blue-50 text-blue-700 border-blue-200";
-      case "final_review": return "bg-purple-50 text-purple-700 border-purple-200";
-      case "completed": return "bg-emerald-50 text-emerald-700 border-emerald-200";
-      default: return "bg-slate-100 text-slate-700";
+      case "submitted": return "bg-slate-900/40 text-slate-400 border-slate-800";
+      case "deposit_paid": return "bg-teal-950/40 text-teal-400 border-teal-900/60";
+      case "assigned": return "bg-cyan-950/40 text-cyan-400 border-cyan-900/60";
+      case "in_progress": return "bg-indigo-950/40 text-indigo-400 border-indigo-900/60";
+      case "draft_submitted": return "bg-blue-950/40 text-blue-400 border-blue-900/60";
+      case "final_review": return "bg-purple-950/40 text-purple-400 border-purple-900/60";
+      case "completed": return "bg-emerald-950/40 text-emerald-400 border-emerald-900/60";
+      default: return "bg-slate-900/40 text-slate-400 border-slate-800";
     }
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-slate-100">
       
-      <div className="pb-6 border-b border-gray-200">
-        <h1 className="text-2xl font-black text-slate-900">Specialist Dashboard</h1>
-        <p className="text-sm text-slate-500">Welcome, {currentUser?.full_name}. View assigned tasks and upload formatting drafts below.</p>
+      <div className="pb-6 border-b border-slate-800">
+        <h1 className="text-2xl font-black text-white">Specialist Dashboard</h1>
+        <p className="text-sm text-slate-400">Welcome, {currentUser?.full_name}. View assigned tasks and upload formatting drafts below.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
         
         {/* Left Side: Order Listing */}
-        <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm h-fit space-y-4">
-          <h3 className="font-extrabold text-sm text-slate-400 uppercase tracking-wider px-2">Assigned Projects</h3>
+        <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 shadow-2xl h-fit space-y-4 backdrop-blur-md">
+          <h3 className="font-extrabold text-sm text-slate-500 uppercase tracking-wider px-2">Assigned Projects</h3>
           
           {orders.length === 0 ? (
-            <div className="text-center py-12 text-slate-400 text-sm">
+            <div className="text-center py-12 text-slate-500 text-sm">
               No jobs assigned yet. Contact administrators to assign tasks to your profile.
             </div>
           ) : (
@@ -161,17 +161,17 @@ export default function SpecialistDashboard() {
                   onClick={() => setSelectedOrder(o)}
                   className={`w-full text-left p-4 rounded-xl border transition flex flex-col space-y-2 ${
                     selectedOrder?.id === o.id 
-                      ? "bg-teal-50/50 border-teal-200" 
-                      : "bg-slate-50 hover:bg-white border-transparent"
+                      ? "bg-teal-950/40 border-teal-850" 
+                      : "bg-slate-950/60 border-transparent hover:bg-slate-900/60"
                   }`}
                 >
                   <div className="flex justify-between items-start">
-                    <span className="font-bold text-sm text-gray-900 truncate max-w-[150px]">{o.title}</span>
+                    <span className="font-bold text-sm text-white truncate max-w-[150px]">{o.title}</span>
                     <span className={`text-[10px] px-2 py-0.5 font-bold uppercase rounded-full border ${getStatusColor(o.status)}`}>
                       {o.status.replace("_", " ")}
                     </span>
                   </div>
-                  <div className="flex justify-between items-center text-xs text-slate-500">
+                  <div className="flex justify-between items-center text-xs text-slate-400">
                     <span>{o.service_type}</span>
                     <span>Deadline: {new Date(o.deadline).toLocaleDateString()}</span>
                   </div>
@@ -186,11 +186,11 @@ export default function SpecialistDashboard() {
           <div className="lg:col-span-2 space-y-6">
             
             {/* Project Details */}
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-6">
-              <div className="flex justify-between items-start pb-4 border-b border-gray-100">
+            <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl space-y-6 backdrop-blur-md">
+              <div className="flex justify-between items-start pb-4 border-b border-slate-800">
                 <div>
-                  <span className="text-xs font-semibold text-slate-400">Order ID: #{selectedOrder.id.slice(-8).toUpperCase()}</span>
-                  <h2 className="text-xl font-bold text-gray-900">{selectedOrder.title}</h2>
+                  <span className="text-xs font-semibold text-slate-500">Order ID: #{selectedOrder.id.slice(-8).toUpperCase()}</span>
+                  <h2 className="text-xl font-bold text-white">{selectedOrder.title}</h2>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className={`px-3 py-1 font-bold text-xs uppercase rounded-full border ${getStatusColor(selectedOrder.status)}`}>
@@ -199,7 +199,7 @@ export default function SpecialistDashboard() {
                   {selectedOrder.status === "assigned" && (
                     <button
                       onClick={startWork}
-                      className="px-3 py-1 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-full transition"
+                      className="px-3 py-1 bg-teal-600 hover:bg-teal-555 text-white font-bold text-xs rounded-full transition shadow-lg shadow-teal-500/20"
                     >
                       Start Work
                     </button>
@@ -210,51 +210,51 @@ export default function SpecialistDashboard() {
               {/* Deadline & Spec row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-2">
-                  <Calendar className="w-5 h-5 text-teal-600" />
+                  <Calendar className="w-5 h-5 text-teal-400" />
                   <div>
-                    <span className="block text-xs text-slate-400 uppercase">Target Deadline</span>
-                    <span className="text-xs font-bold">{new Date(selectedOrder.deadline).toLocaleString()}</span>
+                    <span className="block text-xs text-slate-500 uppercase">Target Deadline</span>
+                    <span className="text-xs font-bold text-slate-200">{new Date(selectedOrder.deadline).toLocaleString()}</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Clock className="w-5 h-5 text-teal-600" />
+                  <Clock className="w-5 h-5 text-teal-400" />
                   <div>
-                    <span className="block text-xs text-slate-400 uppercase">Priority Rating</span>
-                    <span className="text-xs font-bold uppercase">{selectedOrder.priority_level}</span>
+                    <span className="block text-xs text-slate-500 uppercase">Priority Rating</span>
+                    <span className="text-xs font-bold uppercase text-slate-200">{selectedOrder.priority_level}</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <FileText className="w-5 h-5 text-teal-600" />
+                  <FileText className="w-5 h-5 text-teal-400" />
                   <div>
-                    <span className="block text-xs text-slate-400 uppercase">Service Category</span>
-                    <span className="text-xs font-bold">{selectedOrder.service_type}</span>
+                    <span className="block text-xs text-slate-500 uppercase">Service Category</span>
+                    <span className="text-xs font-bold text-slate-200">{selectedOrder.service_type}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-slate-50 p-4 rounded-xl text-xs space-y-2">
-                <span className="font-bold text-slate-600">Student instructions and context:</span>
-                <p className="text-slate-500 leading-relaxed whitespace-pre-wrap">{selectedOrder.task_description}</p>
+              <div className="bg-slate-950/60 border border-slate-800/80 p-4 rounded-xl text-xs space-y-2">
+                <span className="font-bold text-slate-400">Student instructions and context:</span>
+                <p className="text-slate-300 leading-relaxed whitespace-pre-wrap">{selectedOrder.task_description}</p>
               </div>
 
               {/* Order files and delivery links */}
               <div className="space-y-3">
-                <span className="block text-xs font-semibold uppercase text-slate-400">Project Files</span>
+                <span className="block text-xs font-semibold uppercase text-slate-500">Project Files</span>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {selectedOrder.files.map((file) => (
-                    <div key={file.id} className="p-3 border border-slate-100 rounded-lg flex items-center justify-between text-xs bg-white shadow-sm">
+                    <div key={file.id} className="p-3 border border-slate-800 rounded-lg flex items-center justify-between text-xs bg-slate-950/40 shadow-sm">
                       <div className="flex items-center space-x-2 truncate">
-                        <FileText className="w-4 h-4 text-teal-600" />
+                        <FileText className="w-4 h-4 text-teal-400" />
                         <div className="truncate">
-                          <span className="block font-bold text-slate-700 truncate">{file.file_name}</span>
-                          <span className="text-[10px] text-slate-400 uppercase font-semibold">{file.file_category}</span>
+                          <span className="block font-bold text-slate-300 truncate">{file.file_name}</span>
+                          <span className="text-[10px] text-slate-500 uppercase font-semibold">{file.file_category}</span>
                         </div>
                       </div>
                       <a
                         href={api.getDownloadUrl(file.id)}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-1 text-teal-600 hover:bg-teal-50 rounded"
+                        className="p-1 text-teal-400 hover:bg-teal-950/40 rounded"
                       >
                         <Download className="w-4 h-4" />
                       </a>
@@ -266,21 +266,21 @@ export default function SpecialistDashboard() {
 
             {/* Deliverables Uploader Panel */}
             {selectedOrder.status !== "completed" && (
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-4">
-                <h3 className="font-bold text-gray-900 flex items-center space-x-2">
-                  <Upload className="w-5 h-5 text-teal-600" />
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl space-y-4 backdrop-blur-md">
+                <h3 className="font-bold text-white flex items-center space-x-2">
+                  <Upload className="w-5 h-5 text-teal-400" />
                   <span>Upload Milestone Deliverables</span>
                 </h3>
 
                 {uploadErr && (
-                  <div className="p-3 bg-rose-50 text-rose-800 rounded-lg text-xs flex items-center space-x-1 border border-rose-100">
+                  <div className="p-3 bg-rose-950/40 text-rose-400 rounded-lg text-xs flex items-center space-x-1 border border-rose-900/60">
                     <AlertCircle className="w-4 h-4" />
                     <span>{uploadErr}</span>
                   </div>
                 )}
 
                 {uploadSuccess && (
-                  <div className="p-3 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-semibold border border-emerald-100">
+                  <div className="p-3 bg-emerald-950/40 text-emerald-400 rounded-lg text-xs font-semibold border border-emerald-900/60">
                     {uploadSuccess}
                   </div>
                 )}
@@ -290,10 +290,10 @@ export default function SpecialistDashboard() {
                     <label className="block text-[10px] font-bold text-slate-500 mb-1">MILESTONE CATEGORY</label>
                     <select 
                       value={uploadCategory} onChange={(e) => setUploadCategory(e.target.value)}
-                      className="w-full border border-gray-200 rounded p-2.5 text-xs bg-white focus:outline-none focus:border-teal-500"
+                      className="w-full border border-slate-800 rounded p-2.5 text-xs bg-slate-950/60 text-white focus:outline-none focus:border-teal-500"
                     >
-                      <option value="draft">Review Draft (TOC/Outline)</option>
-                      <option value="final">Final Deliverable (Locked until paid)</option>
+                      <option className="bg-slate-850 text-white" value="draft">Review Draft (TOC/Outline)</option>
+                      <option className="bg-slate-850 text-white" value="final">Final Deliverable (Locked until paid)</option>
                     </select>
                   </div>
                   
@@ -301,13 +301,13 @@ export default function SpecialistDashboard() {
                     <label className="block text-[10px] font-bold text-slate-500 mb-1">SELECT DELIVERABLE FILE</label>
                     <input 
                       type="file" required onChange={(e) => setDeliverableFile(e.target.files?.[0] || null)}
-                      className="w-full border border-gray-200 rounded p-2 text-xs bg-white"
+                      className="w-full border border-slate-800 rounded p-2 text-xs bg-slate-950/60 text-slate-300"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full md:w-fit px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-lg shadow-md transition shrink-0 h-10"
+                    className="w-full md:w-fit px-6 py-2.5 bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs rounded-lg shadow-md transition shrink-0 h-10 shadow-lg shadow-teal-500/20"
                   >
                     Upload Asset
                   </button>
@@ -316,15 +316,15 @@ export default function SpecialistDashboard() {
             )}
 
             {/* Chat Thread */}
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-4">
-              <h3 className="font-bold text-gray-900 flex items-center space-x-2">
-                <MessageSquare className="w-5 h-5 text-teal-600" />
+            <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-2xl space-y-4 backdrop-blur-md">
+              <h3 className="font-bold text-white flex items-center space-x-2">
+                <MessageSquare className="w-5 h-5 text-teal-400" />
                 <span>Discussion Thread with Client</span>
               </h3>
 
-              <div className="h-64 overflow-y-auto border border-gray-100 rounded-xl p-4 bg-slate-50 space-y-3 flex flex-col">
+              <div className="h-64 overflow-y-auto border border-slate-800 rounded-xl p-4 bg-slate-950/60 space-y-3 flex flex-col">
                 {chatMessages.length === 0 ? (
-                  <div className="text-center my-auto text-slate-400 text-xs">
+                  <div className="text-center my-auto text-slate-500 text-xs">
                     No conversation logs recorded. Send a greeting to clarify guidelines.
                   </div>
                 ) : (
@@ -336,7 +336,7 @@ export default function SpecialistDashboard() {
                         className={`max-w-[70%] p-3 rounded-xl text-xs space-y-1 ${
                           isMe 
                             ? "bg-teal-600 text-white self-end rounded-tr-none" 
-                            : "bg-white text-gray-800 border border-slate-100 self-start rounded-tl-none shadow-sm"
+                            : "bg-slate-900 text-slate-200 border border-slate-800 self-start rounded-tl-none shadow-sm"
                         }`}
                       >
                         <span className="block font-bold text-[10px] opacity-75">
@@ -355,12 +355,12 @@ export default function SpecialistDashboard() {
               <form onSubmit={handleSendMessage} className="flex gap-2">
                 <input
                   type="text" required value={newMessage} onChange={(e) => setNewMessage(e.target.value)}
-                  className="flex-grow border border-gray-200 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                  className="flex-grow border border-slate-800 bg-slate-950/60 text-white rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500 placeholder-slate-500"
                   placeholder="Respond to student revisions request or detail milestones..."
                 />
                 <button
                   type="submit"
-                  className="p-3 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition"
+                  className="p-3 bg-teal-600 hover:bg-teal-505 text-white rounded-lg transition shadow-lg shadow-teal-500/20"
                 >
                   <Send className="w-5 h-5" />
                 </button>
