@@ -78,22 +78,83 @@ export default function LandingPage() {
     <div className="bg-slate-50 text-slate-900 min-h-screen">
       
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-20 pb-24 bg-gradient-to-b from-teal-50/60 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden pt-24 pb-28 bg-slate-950 text-white">
+        
+        {/* Starry Nebula / Background Mesh */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,118,110,0.15),transparent_70%)] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f766e10_1px,transparent_1px),linear-gradient(to_bottom,#0f766e10_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-40"></div>
+
+        {/* 3D Perspective Floor Plane */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-[60%] border-t border-teal-500/10 pointer-events-none grid-3d-floor">
+          <div className="laser-beam-1"></div>
+          <div className="laser-beam-2"></div>
+        </div>
+
+        {/* 3D Perspective Ceiling Plane */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[40%] border-b border-teal-500/10 pointer-events-none grid-3d-ceiling">
+          <div className="laser-beam-1 [animation-delay:3s]"></div>
+        </div>
+
+        {/* Floating 3D Glowing Nebulas */}
+        <div className="absolute top-10 left-1/4 w-[450px] h-[450px] bg-teal-500/15 rounded-full filter blur-[100px] pointer-events-none animate-pulse"></div>
+        <div className="absolute top-20 right-1/4 w-[350px] h-[350px] bg-indigo-500/10 rounded-full filter blur-[90px] pointer-events-none animate-pulse duration-5000"></div>
+        <div className="absolute -bottom-10 left-1/3 w-[300px] h-[300px] bg-emerald-500/10 rounded-full filter blur-[80px] pointer-events-none"></div>
+
+        {/* Floating 3D Wireframe Cubes */}
+        <div className="absolute top-16 left-12 md:left-24 lg:left-36 animate-[float-slow_8s_ease-in-out_infinite] pointer-events-none opacity-40 md:opacity-60">
+          <div className="cube-scene">
+            <div className="cube-3d">
+              <div className="cube-face cube-face-front"></div>
+              <div className="cube-face cube-face-back"></div>
+              <div className="cube-face cube-face-left"></div>
+              <div className="cube-face cube-face-right"></div>
+              <div className="cube-face cube-face-top"></div>
+              <div className="cube-face cube-face-bottom"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-20 right-12 md:right-24 lg:right-36 animate-[float-slow-reverse_10s_ease-in-out_infinite] pointer-events-none opacity-40 md:opacity-60">
+          <div className="cube-scene">
+            <div className="cube-3d [animation-duration:25s]">
+              <div className="cube-face cube-face-indigo cube-face-front"></div>
+              <div className="cube-face cube-face-indigo cube-face-back"></div>
+              <div className="cube-face cube-face-indigo cube-face-left"></div>
+              <div className="cube-face cube-face-indigo cube-face-right"></div>
+              <div className="cube-face cube-face-indigo cube-face-top"></div>
+              <div className="cube-face cube-face-indigo cube-face-bottom"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-1/2 right-1/3 animate-[float-slow_12s_ease-in-out_infinite] pointer-events-none opacity-20">
+          <div className="cube-scene-sm">
+            <div className="cube-3d [animation-duration:12s]">
+              <div className="cube-face cube-face-sm cube-face-emerald cube-face-sm-front"></div>
+              <div className="cube-face cube-face-sm cube-face-emerald cube-face-sm-back"></div>
+              <div className="cube-face cube-face-sm cube-face-emerald cube-face-sm-left"></div>
+              <div className="cube-face cube-face-sm cube-face-emerald cube-face-sm-right"></div>
+              <div className="cube-face cube-face-sm cube-face-emerald cube-face-sm-top"></div>
+              <div className="cube-face cube-face-sm cube-face-emerald cube-face-sm-bottom"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             <div className="space-y-6 text-left">
-              <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-teal-50 text-teal-700 text-xs font-semibold rounded-full border border-teal-100">
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-teal-950/80 border border-teal-500/20 text-teal-400 text-xs font-semibold rounded-full">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Professional Academic Support Network</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl font-black text-gray-900 leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white">
                 Academic Support for <br />
-                <span className="text-teal-600">Busy Students</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Busy Students</span>
               </h1>
               
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
                 Professional assistance for presentations, report formatting, proofreading, research indexing support, and academic coding projects.
               </p>
               
@@ -106,46 +167,46 @@ export default function LandingPage() {
                 </Link>
                 <a
                   href="#calculator"
-                  className="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-xl border border-gray-200 transition-all transform hover:-translate-y-0.5"
+                  className="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold rounded-xl border border-slate-800 transition-all transform hover:-translate-y-0.5"
                 >
                   Get Quote
                 </a>
               </div>
               
               {/* Statistics row */}
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-100">
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80">
                 <div>
-                  <span className="block text-2xl font-extrabold text-gray-900">12,450+</span>
-                  <span className="text-xs text-gray-500">Orders Completed</span>
+                  <span className="block text-2xl font-extrabold text-white">12,450+</span>
+                  <span className="text-xs text-slate-400">Orders Completed</span>
                 </div>
                 <div>
-                  <span className="block text-2xl font-extrabold text-gray-900">98.7%</span>
-                  <span className="text-xs text-gray-500">Student Satisfaction</span>
+                  <span className="block text-2xl font-extrabold text-white">98.7%</span>
+                  <span className="text-xs text-slate-400">Student Satisfaction</span>
                 </div>
                 <div>
-                  <span className="block text-2xl font-extrabold text-gray-900">120+</span>
-                  <span className="text-xs text-gray-500">Active Specialists</span>
+                  <span className="block text-2xl font-extrabold text-white">120+</span>
+                  <span className="text-xs text-slate-400">Active Specialists</span>
                 </div>
               </div>
             </div>
 
-            {/* Visual Hero Block */}
-            <div className="bg-white rounded-2xl border border-slate-100 shadow-xl p-8 space-y-6">
-              <div className="flex items-center space-x-2 pb-4 border-b border-gray-100">
-                <ShieldCheck className="text-teal-600 w-6 h-6" />
-                <h3 className="font-extrabold text-lg">Academic Integrity Standards</h3>
+            {/* Visual Hero Block (Dark Glassmorphic layout) */}
+            <div className="bg-slate-900/60 backdrop-blur-md rounded-2xl border border-slate-800/80 shadow-2xl p-8 space-y-6 hover-tilt">
+              <div className="flex items-center space-x-2 pb-4 border-b border-slate-800">
+                <ShieldCheck className="text-teal-400 w-6 h-6" />
+                <h3 className="font-extrabold text-lg text-white">Academic Integrity Standards</h3>
               </div>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <p className="text-sm text-slate-400 leading-relaxed">
                 CreackEduHelp operates with strict compliance to global university guidelines. We empower students with high-quality formatting, editorial assistance, and template designs to optimize study workflows.
               </p>
               <div className="space-y-3 pt-2">
                 <div className="flex items-start space-x-3">
-                  <span className="text-teal-600 bg-teal-50 p-1 rounded-full"><CheckCircle2 className="w-4 h-4" /></span>
-                  <p className="text-xs font-semibold text-slate-600">Allowed: Layout formatting, editing, references audit, slide template design.</p>
+                  <span className="text-teal-400 bg-teal-950/50 p-1 rounded-full"><CheckCircle2 className="w-4 h-4" /></span>
+                  <p className="text-xs font-semibold text-slate-300">Allowed: Layout formatting, editing, references audit, slide template design.</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <span className="text-red-500 bg-red-50 p-1 rounded-full"><AlertTriangle className="w-4 h-4" /></span>
-                  <p className="text-xs font-semibold text-slate-600">Prohibited: Impersonation, exam-taking, ghost-writing, credential sharing.</p>
+                  <span className="text-rose-400 bg-rose-950/50 p-1 rounded-full"><AlertTriangle className="w-4 h-4" /></span>
+                  <p className="text-xs font-semibold text-slate-300">Prohibited: Impersonation, exam-taking, ghost-writing, credential sharing.</p>
                 </div>
               </div>
             </div>
@@ -237,7 +298,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 space-y-6">
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 space-y-6 hover-tilt">
             <div>
               <label className="block text-xs font-semibold uppercase text-slate-400 mb-2">Service Category</label>
               <select 
