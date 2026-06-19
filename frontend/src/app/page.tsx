@@ -313,16 +313,16 @@ export default function LandingPage() {
                     setSlideCount(0);
                   }
                 }}
-                className="w-full bg-slate-750 border border-slate-600 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-750 border border-slate-600 rounded-lg p-3 text-sm focus:outline-none focus:border-teal-500 text-white"
               >
-                <option value="PPT Presentation">PPT Presentation Design</option>
-                <option value="Report Formatting">Report Formatting & Layout</option>
-                <option value="Research Assistance">Research Assistance</option>
-                <option value="Proofreading & Editing">Proofreading & Editing</option>
-                <option value="Referencing & Citation">Referencing Audit</option>
-                <option value="Data Analysis">Data Analysis Support</option>
-                <option value="Programming Support">Programming Support</option>
-                <option value="Document Design">Academic Document Design</option>
+                <option className="bg-slate-800 text-white" value="PPT Presentation">PPT Presentation Design</option>
+                <option className="bg-slate-800 text-white" value="Report Formatting">Report Formatting & Layout</option>
+                <option className="bg-slate-800 text-white" value="Research Assistance">Research Assistance</option>
+                <option className="bg-slate-800 text-white" value="Proofreading & Editing">Proofreading & Editing</option>
+                <option className="bg-slate-800 text-white" value="Referencing & Citation">Referencing Audit</option>
+                <option className="bg-slate-800 text-white" value="Data Analysis">Data Analysis Support</option>
+                <option className="bg-slate-800 text-white" value="Programming Support">Programming Support</option>
+                <option className="bg-slate-800 text-white" value="Document Design">Academic Document Design</option>
               </select>
             </div>
 
