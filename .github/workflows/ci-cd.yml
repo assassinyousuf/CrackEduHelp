@@ -1,0 +1,79 @@
+name: CreackEduHelp CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  backend-test:
+    name: Backend Linting and Test Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest httpx
+
+      - name: Run Backend Tests
+        run: |
+          cd backend
+          # Mock DB variables for test execution
+          DATABASE_URL=postgresql://eduhelp_user:eduhelp_password@localhost:5432/eduhelp_db pytest
+
+  frontend-build:
+    name: Frontend Code Validation & Compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Validate Lint Rules
+        run: |
+          cd frontend
+          npm run lint
+
+      - name: Compile Next.js Static Pages
+        run: |
+          cd frontend
+          NEXT_PUBLIC_API_URL=http://localhost/api npm run build
+
+  docker-build:
+    name: Dockerize Application Stack
+    needs: [backend-test, frontend-build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Compile Backend Container
+        run: |
+          docker build -t creackeduhelp-backend:latest ./backend
+
+      - name: Compile Frontend Container
+        run: |
+          docker build -t creackeduhelp-frontend:latest ./frontend
