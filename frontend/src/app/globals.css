@@ -190,18 +190,17 @@ body {
   box-shadow: 0 0 8px rgba(16, 185, 129, 0.08) inset;
 }
 
-/* 3D Interactive Hover Tilt */
+/* Premium Solid Hover Card Style */
 .hover-tilt {
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.5s, box-shadow 0.5s;
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s, box-shadow 0.3s;
+  transform: translateY(0);
 }
 
 .hover-tilt:hover {
-  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) scale(1.015);
-  border-color: rgba(20, 184, 166, 0.3) !important;
+  transform: translateY(-2px);
+  border-color: rgba(20, 184, 166, 0.45) !important;
   box-shadow: 
-    -10px 10px 25px rgba(20, 184, 166, 0.06), 
-    10px -10px 25px rgba(99, 102, 241, 0.06), 
-    0 25px 50px rgba(0, 0, 0, 0.45) !important;
+    0 20px 35px -10px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(20, 184, 166, 0.08) !important;
 }
 
