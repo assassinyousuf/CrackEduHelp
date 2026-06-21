@@ -8,11 +8,8 @@ The platform is strictly positioned as an **Academic Support & Productivity Serv
 
 ## Technical Stack
 - **Frontend**: Next.js 15+ (App Router), TypeScript, Tailwind CSS, Lucide Icons.
-- **Backend**: FastAPI (Python 3.12+), SQLAlchemy, Pydantic validations.
-- **Cache & Message Broker**: Redis.
-- **Database**: PostgreSQL.
-- **Proxy**: Nginx (Reverse Proxy routing).
-- **Orchestration**: Docker & Docker Compose.
+- **Backend**: Node.js (Express), TypeScript, Sequelize ORM.
+- **Database**: PostgreSQL (production), SQLite (local development).
 
 ---
 
@@ -65,29 +62,35 @@ For review and testing, startup seeding registers the following credentials auto
 
 ---
 
-## Launch Instructions (Docker)
+## Launch Instructions (Local Setup)
 
-To build and run all services in a single step:
-
+### 1. Start the Backend
+Navigate to the `backend` folder, install dependencies, and start the server:
 ```bash
-docker-compose up --build
+cd backend
+npm install
+npm run dev
 ```
+The backend server runs on `http://localhost:8000`. On startup, it synchronizes the database (creating a local SQLite `eduhelp_dev.db` file) and seeds the default admin and specialist accounts.
 
-This starts:
-- **Nginx proxy**: `http://localhost` (Port 80)
-- **Next.js Frontend**: `http://localhost:3000` (Forwarded by Nginx)
-- **FastAPI Backend**: `http://localhost:8000` (Endpoints prefix: `/api/v1`, Swagger docs: `/docs`)
-- **PostgreSQL Database**: Port 5432
-- **Redis Cache**: Port 6379
+### 2. Start the Frontend
+Navigate to the `frontend` folder, install dependencies, and start Next.js:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The frontend runs on `http://localhost:3000`. To point the frontend to the local backend server, create `frontend/.env.local` containing:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+```
 
 ---
 
 ## Running Automated Tests
 
-To test the backend logic (in-memory SQLite test database override):
-
+To execute the backend integration test suite (using an in-memory SQLite database):
 ```bash
 cd backend
-python -m pip install -r requirements.txt
-pytest
+npm run test
 ```

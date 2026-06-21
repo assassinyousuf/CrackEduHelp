@@ -11,6 +11,11 @@ backend/__pycache__/
 backend/*.pyc
 backend/.pytest_cache/
 backend/eduhelp_dev.db
+backend/eduhelp_dev.db.bak
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/.env.local
 backend/storage/
 storage/
 
